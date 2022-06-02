@@ -1,0 +1,7 @@
+<a routerLink="{{getRoute(pokemon)}}" matRipple class="d-flex justify-content-start align-items-center item"
+    [ngClass]="{selected: isSelected}">
+    <img src="/assets/pokemon/sprites/{{getSprite(pokemon)}}" />
+    <div>
+        <p class="m-0">#{{pokemon.id}}. {{pokemon.name.english}}</p>
+    </div>
+</a>

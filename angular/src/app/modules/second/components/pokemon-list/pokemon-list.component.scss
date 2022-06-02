@@ -1,0 +1,9 @@
+@import "/src/variables.scss";
+
+.item {
+    cursor: pointer;
+}
+
+.selected {
+    background-color: $gray-300;
+}

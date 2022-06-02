@@ -1,0 +1,17 @@
+@import "/src/variables.scss";
+
+.avatar {
+    display: block;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.caption,
+.names,
+.stats {
+    text-align: center;
+}
+
+.separator {
+    border-bottom: 1px solid $gray-700;
+}

@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 pokemon-list py-4">
+            <h3>Pokedex</h3>
+            <app-pokemon-list [selected]="selected" (selectItem)="selectItem($event)" [pokemons]="pokemons">
+            </app-pokemon-list>
+        </div>
+        <div class="col-8 py-4">
+            <app-pokemon-detail *ngIf="selected" [pokemon]="selected" [isFirstSelected]="isFirstSelected"
+                [isLastSelected]="isLastSelected" (previous)="goPrevious()" (next)="goNext()"></app-pokemon-detail>
+        </div>
+    </div>
+</div>

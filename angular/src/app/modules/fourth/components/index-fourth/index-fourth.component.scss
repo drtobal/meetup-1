@@ -1,0 +1,9 @@
+.pokemon-list {
+    height: 100vh;
+    overflow: hidden;   
+}
+
+app-pokemon-list {
+    overflow: auto;
+    height: 100%;
+}

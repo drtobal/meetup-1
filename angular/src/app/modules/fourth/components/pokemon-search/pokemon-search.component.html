@@ -1,0 +1,27 @@
+<div *ngIf="isSearchVisible" [@OverlayInOutAnimation] (click)="isSearchVisible = false" class="overlay"></div>
+<div class="d-flex justify-content-center align-items-center main-container"
+    [ngClass]="{'search-visible': isSearchVisible}">
+    <div class="search-container d-flex justify-content-center align-items-stretch">
+        <form *ngIf="isSearchVisible" [@InputInOutAnimation] class="search-form px-2 d-flex flex-fill">
+            <mat-form-field appearance="legacy" floatLabel="never" class="d-block w-100">
+                <input type="text" placeholder="Pokemon" matInput [formControl]="form" [matAutocomplete]="auto"
+                    (keydown.esc)="isSearchVisible = false" (keydown.ArrowDown)="$event.stopPropagation()"
+                    (keydown.ArrowUp)="$event.stopPropagation()" #input>
+                <button *ngIf="form.value" matSuffix mat-icon-button (click)="form.setValue('')">
+                    <mat-icon>close</mat-icon>
+                </button>
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
+                    (optionSelected)="optionSelected($event)">
+                    <mat-option *ngFor="let pokemon of filterPokemons(form.value)" [value]="pokemon">
+                        <app-pokemon-list-item [pokemon]="pokemon" (click)="isSearchVisible = false">
+                        </app-pokemon-list-item>
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </form>
+        <button matRipple class="search-button p-2 d-flex justify-content-center align-items-center"
+            (click)="showSearch()">
+            <mat-icon>search</mat-icon>
+        </button>
+    </div>
+</div>

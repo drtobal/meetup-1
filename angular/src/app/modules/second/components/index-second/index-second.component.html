@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 pokemon-list py-4">
+            <h3>Pokedex</h3>
+            <app-pokemon-list [selected]="selected" (selectItem)="selectItem($event)"></app-pokemon-list>
+        </div>
+        <div class="col-8 py-4">
+            <app-pokemon-detail *ngIf="selected" [pokemon]="selected"></app-pokemon-detail>
+        </div>
+    </div>
+</div>

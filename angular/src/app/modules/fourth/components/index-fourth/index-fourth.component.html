@@ -1,0 +1,16 @@
+<app-pokemon-search [pokemons]="pokemons"></app-pokemon-search>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 pokemon-list pt-4 d-flex flex-column justify-content-center align-items-stretch">
+            <h3>Pokedex</h3>
+            <app-pokemon-list class="d-block pb-4" [selected]="selected" [pokemons]="pokemons">
+            </app-pokemon-list>
+        </div>
+        <div class="col py-4">
+            <mat-card *ngIf="selected">
+                <app-pokemon-detail [pokemon]="selected" [previous]="previous" [next]="next">
+                </app-pokemon-detail>
+            </mat-card>
+        </div>
+    </div>
+</div>

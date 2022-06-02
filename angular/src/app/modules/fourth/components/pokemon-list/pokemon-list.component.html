@@ -1,0 +1,7 @@
+<!--<cdk-virtual-scroll-viewport appendOnly itemSize="40" class="viewport">
+    <app-pokemon-list-item *cdkVirtualFor="let pokemon of pokemons" [pokemon]="pokemon"
+        [isSelected]="pokemon.id === selected?.id" #pokemon></app-pokemon-list-item>
+</cdk-virtual-scroll-viewport>-->
+
+<app-pokemon-list-item *ngFor="let pokemon of pokemons" [pokemon]="pokemon" [isSelected]="pokemon.id === selected?.id"
+    #pokemon></app-pokemon-list-item>

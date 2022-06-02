@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-center align-items-center">
+    <img src="/assets/pokemon/images/{{getImage(pokemon)}}" class="avatar" />
+</div>
+<div class="d-flex justify-content-center align-items-center pt-3">
+    <h2>{{pokemon.name.english}}</h2>
+</div>
+<div class="d-flex justify-content-between align-items-center py-3">
+    <button *ngIf="!isFirstSelected" mat-button color="primary" (click)="previous.emit()">Anterior</button>
+    <div></div>
+    <button *ngIf="!isLastSelected" mat-button color="primary" (click)="next.emit()">Siguiente</button>
+</div>
+<div class="row names">
+    <div class="col d-flex flex-column justify-content-center align-items-center">
+        <p class="m-0">Japonés</p>
+        <p><strong>{{pokemon.name.japanese}}</strong></p>
+    </div>
+    <div class="col d-flex flex-column justify-content-center align-items-center">
+        <p class="m-0">Chino <small>(simplificado)</small></p>
+        <p><strong>{{pokemon.name.chinese}}</strong></p>
+    </div>
+    <div class="col d-flex flex-column justify-content-center align-items-center">
+        <p class="m-0">Francés</p>
+        <p><strong>{{pokemon.name.french}}</strong></p>
+    </div>
+</div>
+<div class="separator"></div>
+<div class="py-3">
+    <h3 class="m-0 caption">Tipo</h3>
+    <p class="m-0 text-center">{{pokemon.type.join(', ')}}</p>
+</div>
+<div class="separator"></div>
+<div class="py-3">
+    <h3 class="caption">Estadísticas</h3>
+    <div class="row row-cols-3 stats">
+        <div class="col d-flex flex-column justify-content-center align-items-center">
+            <p class="m-0">HP</p>
+            <p><strong>{{pokemon.base.HP}}</strong></p>
+        </div>
+        <div class="col d-flex flex-column justify-content-center align-items-center">
+            <p class="m-0">Ataque</p>
+            <p><strong>{{pokemon.base.Attack}}</strong></p>
+        </div>
+        <div class="col d-flex flex-column justify-content-center align-items-center">
+            <p class="m-0">Defensa</p>
+            <p><strong>{{pokemon.base.Defense}}</strong></p>
+        </div>
+        <div class="col d-flex flex-column justify-content-center align-items-center">
+            <p class="m-0">Ataque especial</p>
+            <p><strong>{{pokemon.base['Sp. Attack']}}</strong></p>
+        </div>
+        <div class="col d-flex flex-column justify-content-center align-items-center">
+            <p class="m-0">Defensa especial</p>
+            <p><strong>{{pokemon.base['Sp. Defense']}}</strong></p>
+        </div>
+        <div class="col d-flex flex-column justify-content-center align-items-center">
+            <p class="m-0">Velocidad</p>
+            <p><strong>{{pokemon.base.Speed}}</strong></p>
+        </div>
+    </div>
+</div>

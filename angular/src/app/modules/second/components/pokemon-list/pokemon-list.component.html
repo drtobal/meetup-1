@@ -1,0 +1,7 @@
+<div *ngFor="let item of pokemons" class="d-flex justify-content-start align-items-center item"
+    [ngClass]="{selected: item.id === selected?.id}" (click)="selectItem.emit(item)">
+    <img src="/assets/pokemon/sprites/{{getSprite(item)}}" />
+    <div>
+        <p class="m-0">#{{item.id}}. {{item.name.english}}</p>
+    </div>
+</div>
